@@ -35,8 +35,6 @@ public class ListarC extends javax.swing.JInternalFrame {
         setBackground(new java.awt.Color(145, 31, 39));
         setBorder(null);
         setClosable(true);
-        setMaximizable(true);
-        setResizable(true);
         setTitle("Listado de Clientes");
         setPreferredSize(new java.awt.Dimension(700, 455));
         setRequestFocusEnabled(false);

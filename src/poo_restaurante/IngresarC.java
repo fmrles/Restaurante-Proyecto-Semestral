@@ -27,7 +27,6 @@ public class IngresarC extends javax.swing.JInternalFrame {
     public void AgregarCliente(Cliente c) {
         if (cont < cl.length) {
             cl[cont] = c;
-
             JOptionPane.showMessageDialog(null, "Cliente registrado: " + cl[cont].getNombre());
             cont++;
         } else {
@@ -41,7 +40,7 @@ public class IngresarC extends javax.swing.JInternalFrame {
             info = info + "\n\n No hay clientes registrados ";
         } else {
             for (int i = 0; i < cont; i++) {
-                info = info + cl[i].getCelular() + "  " + cl[i].getNombre() + "\n";
+                info = info + cl[i].getCelular() + "  " + cl[i].getNombre() + "  " + cl[i].getId() + "\n";
             }
         }
         return info;
@@ -61,7 +60,6 @@ public class IngresarC extends javax.swing.JInternalFrame {
     public boolean validarFono(String fono) {
         return fono.matches("[+-]?\\d*(\\.\\d+)?");
     }
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -214,20 +212,21 @@ public class IngresarC extends javax.swing.JInternalFrame {
     private void registrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarActionPerformed
         String n = nombreTxt.getText();
         String c = celularTxt.getText();
-        int id = 1;
-
+        int id = 0;
+        
         if (n.isEmpty() == false && c.isEmpty() == false) {
-            Cliente cl = new Cliente(n, c, id);//Dependencia
             if (validarNombre(n) == true && validarFono(c) == true) {
                 JOptionPane.showMessageDialog(null, "Agregado exitosamente");
+                Cliente cl = new Cliente(n, c, id++);//Dependencia
                 AgregarCliente(cl);
+                
             } else {
-                JOptionPane.showMessageDialog(null, "El numero de orden se esta repitiendo");
+                JOptionPane.showMessageDialog(null, "Error en los datos");
             }
         } else {
             JOptionPane.showMessageDialog(null, "Debe ingresar todos los datos del formulario");
         }
-        id++;
+        id = id + 1;
     }//GEN-LAST:event_registrarActionPerformed
 
 

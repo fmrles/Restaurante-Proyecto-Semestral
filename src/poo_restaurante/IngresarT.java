@@ -107,6 +107,8 @@ public class IngresarT extends javax.swing.JInternalFrame {
         puesto = new javax.swing.JComboBox<>();
         guardar = new javax.swing.JButton();
 
+        setClosable(true);
+
         jPanel1.setBackground(new java.awt.Color(145, 31, 39));
 
         jLabel2.setFont(new java.awt.Font("Cooper Black", 0, 36)); // NOI18N

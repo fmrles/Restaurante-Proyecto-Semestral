@@ -50,7 +50,6 @@ public IngresarC f;
         jLabel1 = new javax.swing.JLabel();
 
         setClosable(true);
-        setMaximizable(true);
         setTitle("Buscar Clientes");
 
         jPanel1.setBackground(new java.awt.Color(145, 31, 39));

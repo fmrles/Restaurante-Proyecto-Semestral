@@ -51,6 +51,8 @@ public class BuscarT extends javax.swing.JInternalFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
+        setClosable(true);
+
         jPanel1.setBackground(new java.awt.Color(145, 31, 39));
 
         rut.addActionListener(new java.awt.event.ActionListener() {

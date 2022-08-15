@@ -33,7 +33,6 @@ public class ListarD extends javax.swing.JInternalFrame {
         listado = new javax.swing.JTextArea();
 
         setClosable(true);
-        setMaximizable(true);
 
         jPanel1.setBackground(new java.awt.Color(145, 31, 39));
 

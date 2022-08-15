@@ -61,7 +61,7 @@ public class IngresarD extends javax.swing.JInternalFrame {
             info = info + "\n\n No hay deliverys registradas ";
         } else {
             for (int i = 0; i < cont; i++) {
-                info = info + " " + deli[i].getDireccion() + "  " + deli[i].getPedido() + "\n TOTAL= $" + deli[i].getPrecio() + "\n";
+                info = info + "  " + deli[i].getId() + " " + deli[i].getDireccion() + "  " + deli[i].getPedido() + "\n TOTAL= $" + deli[i].getPrecio() + "\n";
             }
         }
         return info;
@@ -95,7 +95,6 @@ public class IngresarD extends javax.swing.JInternalFrame {
 
         setBackground(new java.awt.Color(145, 31, 39));
         setClosable(true);
-        setMaximizable(true);
         setResizable(true);
 
         jPanel1.setBackground(new java.awt.Color(145, 31, 39));

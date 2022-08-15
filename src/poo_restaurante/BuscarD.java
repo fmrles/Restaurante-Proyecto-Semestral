@@ -53,7 +53,6 @@ public class BuscarD extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setClosable(true);
-        setMaximizable(true);
 
         jPanel1.setBackground(new java.awt.Color(145, 31, 39));
 

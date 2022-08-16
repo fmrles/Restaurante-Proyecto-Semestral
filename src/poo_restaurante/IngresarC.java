@@ -22,6 +22,7 @@ public class IngresarC extends javax.swing.JInternalFrame {
         initComponents();
         cl = new Cliente[50];
         cont = 0;
+        this.numOrden.setText(String.valueOf(cont +1));
     }
 
     public void AgregarCliente(Cliente c) {
@@ -77,6 +78,8 @@ public class IngresarC extends javax.swing.JInternalFrame {
         jLabel3 = new javax.swing.JLabel();
         celularTxt = new javax.swing.JTextField();
         registrar = new javax.swing.JButton();
+        numOrden = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setClosable(true);
         setRequestFocusEnabled(false);
@@ -139,23 +142,34 @@ public class IngresarC extends javax.swing.JInternalFrame {
             }
         });
 
+        numOrden.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
+        numOrden.setForeground(new java.awt.Color(250, 206, 127));
+        numOrden.setText("N°");
+
+        jLabel5.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(250, 206, 127));
+        jLabel5.setText("N° de Orden: ");
+
         javax.swing.GroupLayout BGLayout = new javax.swing.GroupLayout(BG);
         BG.setLayout(BGLayout);
         BGLayout.setHorizontalGroup(
             BGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BGLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(BGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(BGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(BGLayout.createSequentialGroup()
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(nombreTxt))
-                        .addComponent(jLabel2)
-                        .addGroup(BGLayout.createSequentialGroup()
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(celularTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(BGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(BGLayout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nombreTxt))
+                    .addComponent(jLabel2)
+                    .addGroup(BGLayout.createSequentialGroup()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(celularTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(BGLayout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(numOrden))
                     .addGroup(BGLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(registrar, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -174,7 +188,11 @@ public class IngresarC extends javax.swing.JInternalFrame {
                 .addGroup(BGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(celularTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(BGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
+                    .addComponent(numOrden))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(registrar)
                 .addGap(3, 3, 3))
         );
@@ -187,7 +205,7 @@ public class IngresarC extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(BG, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(BG, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
         );
 
         pack();
@@ -212,12 +230,12 @@ public class IngresarC extends javax.swing.JInternalFrame {
     private void registrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarActionPerformed
         String n = nombreTxt.getText();
         String c = celularTxt.getText();
-        int id = 0;
+        int o = Integer.parseInt(numOrden.getText());
         
         if (n.isEmpty() == false && c.isEmpty() == false) {
             if (validarNombre(n) == true && validarFono(c) == true) {
                 JOptionPane.showMessageDialog(null, "Agregado exitosamente");
-                Cliente cl = new Cliente(n, c, id++);//Dependencia
+                Cliente cl = new Cliente(n, c, o);//Dependencia
                 AgregarCliente(cl);
                 
             } else {
@@ -226,7 +244,7 @@ public class IngresarC extends javax.swing.JInternalFrame {
         } else {
             JOptionPane.showMessageDialog(null, "Debe ingresar todos los datos del formulario");
         }
-        id = id + 1;
+        numOrden.setText(String.valueOf(cont + 1));
     }//GEN-LAST:event_registrarActionPerformed
 
 
@@ -236,7 +254,9 @@ public class IngresarC extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JTextField nombreTxt;
+    private javax.swing.JLabel numOrden;
     private javax.swing.JButton registrar;
     // End of variables declaration//GEN-END:variables
 }

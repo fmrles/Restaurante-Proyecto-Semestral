@@ -18,29 +18,32 @@ IngresarD form1;
      */
     public ListarPedidos2(IngresarD form) {
         initComponents();
-        this.CargarTabla();
         form1 = form;
         modelo = new DefaultTableModel();
+        modelo.addColumn("Cliente");
         modelo.addColumn("Identificación");
         modelo.addColumn("Dirección");
         modelo.addColumn("Pedido");
         modelo.addColumn("Precio");
+        this.CargarTabla();
     }
     
     public void CargarTabla() {
+        listado.setModel(modelo);
         modelo.getDataVector().clear();
         int i = 0;
         Delivery e[] = form1.deli;
-        Object [] fila = new Object[4];
+        Object [] fila = new Object[5];
         while(i < form1.cont) {
-            fila[0] = e[i].getId();
-            fila[1] = e[i].getDireccion();
-            fila[2] = e[i].getPedido();
-            fila[3] = e[i].getPrecio();
+            fila[0] = e[i].getClienteNombre().getNombre();
+            fila[1] = e[i].getId();
+            fila[2] = e[i].getDireccion();
+            fila[3] = e[i].getPedido();
+            fila[4] = e[i].getPrecio();
             modelo.addRow(fila);
             i++;
         }
-        listado.setModel(modelo);
+        
     }
 
     /**

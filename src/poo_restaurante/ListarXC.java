@@ -22,23 +22,24 @@ public class ListarXC extends javax.swing.JInternalFrame {
      */
     public ListarXC(IngresarD form) {
         initComponents();
-        this.CargarTabla(nombre.getText());
         form1 = form;
         modelo = new DefaultTableModel();
         modelo.addColumn("Identificación");
         modelo.addColumn("Dirección");
         modelo.addColumn("Pedido");
         modelo.addColumn("Precio");
+        this.CargarTabla(nombre.getText());
     }
 
     public void CargarTabla(String nombre) {
+        listado.setModel(modelo);
         modelo.getDataVector().clear();
         int j = 0;
         Delivery e[] = form1.deli;
-        Object[] fila = new Object[6];
+        Object[] fila = new Object[4];
         while (j < form1.cont) {
             for (int i = 0; i < form1.cont; i++) {
-                if (nombre.equals(form2.cl[i].getNombre())) {
+                if (nombre.equals(form1.deli[i].getClienteNombre().getNombre())) {
                     fila[0] = e[i].getId();
                     fila[1] = e[i].getDireccion();
                     fila[2] = e[i].getPedido();
@@ -50,7 +51,7 @@ public class ListarXC extends javax.swing.JInternalFrame {
             }
 
         }
-        listado.setModel(modelo);
+        
     }
 
     /**

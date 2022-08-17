@@ -35,10 +35,9 @@ public class IngresarD extends javax.swing.JInternalFrame {
         }
     }
 
-    public Cliente getCliente(String orden) {
-        int id = Integer.parseInt(orden);
+    public Cliente getCliente(String nombre) {
         for (int i = 0; i < form.cont; i++) {
-            if (form.cl[i].getId() == id) {
+            if (form.cl[i].getNombre().equals(nombre)) {
                 return form.cl[i];
             }
         }
@@ -48,10 +47,10 @@ public class IngresarD extends javax.swing.JInternalFrame {
     public void AgregarDelivery(Delivery d) {
         if (cont < deli.length) {
             deli[cont] = d;
-            JOptionPane.showMessageDialog(null, "Delivery registrada: " + deli[cont].getDireccion());
+            JOptionPane.showMessageDialog(null, "Pedido de " + deli[cont].getClienteNombre().getNombre() + " esta listo");
             cont++;
         } else {
-            JOptionPane.showMessageDialog(null, "No se ha podido ingresar la mascotita");
+            JOptionPane.showMessageDialog(null, "No se ha podido ingresar el pedido");
         }
     }
 
@@ -62,7 +61,7 @@ public class IngresarD extends javax.swing.JInternalFrame {
         } else {
             for (int i = 0; i < cont; i++) {
 
-                info = info + "  " + deli[i].getId() + " " + deli[i].getDireccion() + "  " + deli[i].getPedido() + "\n TOTAL= $" + deli[i].getPrecio() + "\n";
+                info = info + "  " + deli[i].getClienteNombre().getNombre() + "  " + deli[i].getId() + " " + deli[i].getDireccion() + "  " + deli[i].getPedido() + "\n TOTAL= $" + deli[i].getPrecio() + "\n";
 
             }
         }
@@ -473,6 +472,8 @@ public class IngresarD extends javax.swing.JInternalFrame {
 
     private void GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarActionPerformed
         // TODO add your handling code here:
+        String clNom = (String) nombreC.getSelectedItem();
+        Cliente nombre = getCliente(clNom);
         String d = direccion.getText();
         int id = Integer.parseInt(identificador.getText());
         String pedido = "";
@@ -546,143 +547,143 @@ public class IngresarD extends javax.swing.JInternalFrame {
         int total2a = 0;
         int total3a = 0;
         int total4a = 0;
-        
+
 //verificando y calculando valor pedido hamburgesa
-        if(burger1.isSelected()) {
-            if(ceb <= 0) {
+        if (burger1.isSelected()) {
+            if (ceb <= 0) {
                 JOptionPane.showMessageDialog(null, "Debe ingresar la cantidad de: " + eb);
             } else {
-                total1h = ceb*5000;
+                total1h = ceb * 5000;
                 pedidoh1 = " " + eb + " $" + total1h + " ";
             }
         }
-        if(burger2.isSelected()) {
-            if(cbbq <= 0) {
+        if (burger2.isSelected()) {
+            if (cbbq <= 0) {
                 JOptionPane.showMessageDialog(null, "Debe ingresar la cantidad de: " + bbq);
             } else {
-                total2h = cbbq*6000;
+                total2h = cbbq * 6000;
                 pedidoh2 = " " + bbq + " $" + total2h + " ";
             }
         }
-        if(burger3.isSelected()) {
-            if(cro <= 0) {
+        if (burger3.isSelected()) {
+            if (cro <= 0) {
                 JOptionPane.showMessageDialog(null, "Debe ingresar la cantidad de: " + ro);
             } else {
-                total3h = cro*6500;
+                total3h = cro * 6500;
                 pedidoh3 = " " + ro + " $" + total3h + " ";
             }
         }
-        if(burger4.isSelected()) {
-            if(clg <= 0) {
+        if (burger4.isSelected()) {
+            if (clg <= 0) {
                 JOptionPane.showMessageDialog(null, "Debe ingresar la cantidad de: " + lg);
             } else {
-                total4h = clg*7500;
+                total4h = clg * 7500;
                 pedidoh4 = " " + lg + " $" + total4h + " ";
             }
         }
-        if(burger5.isSelected()) {
-            if(cei <= 0) {
+        if (burger5.isSelected()) {
+            if (cei <= 0) {
                 JOptionPane.showMessageDialog(null, "Debe ingresar la cantidad de: " + ei);
             } else {
-                total5h = cei*8000;
+                total5h = cei * 8000;
                 pedidoh5 = " " + ei + " $" + total5h + " ";
             }
         }
         totalBurger = total1h + total2h + total3h + total4h + total5h;
         pedidoBurger = pedidoh1 + pedidoh2 + pedidoh3 + pedidoh4 + pedidoh5;
-        
+
 //verificando y calculando valor pedido bebida
-        if(bebida1.isSelected()) {
-            if(cbcc <= 0) {
+        if (bebida1.isSelected()) {
+            if (cbcc <= 0) {
                 JOptionPane.showMessageDialog(null, "Debe ingresar la cantidad de: " + bcc);
             } else {
-                total1b = cbcc*1500;
+                total1b = cbcc * 1500;
                 pedidob1 = " " + bcc + " $" + total1b + " ";
             }
         }
-        if(bebida2.isSelected()) {
-            if(cbf <= 0) {
+        if (bebida2.isSelected()) {
+            if (cbf <= 0) {
                 JOptionPane.showMessageDialog(null, "Debe ingresar la cantidad de: " + bf);
             } else {
-                total2b = cbf*1500;
+                total2b = cbf * 1500;
                 pedidob2 = " " + bf + " $" + total2b + " ";
             }
         }
-        if(bebida3.isSelected()) {
-            if(cbp <= 0) {
+        if (bebida3.isSelected()) {
+            if (cbp <= 0) {
                 JOptionPane.showMessageDialog(null, "Debe ingresar la cantidad de: " + bp);
             } else {
-                total3b = cbp*1500;
+                total3b = cbp * 1500;
                 pedidob3 = " " + bp + " $" + total3b + " ";
             }
         }
-        if(bebida4.isSelected()) {
-            if(cbs <= 0) {
+        if (bebida4.isSelected()) {
+            if (cbs <= 0) {
                 JOptionPane.showMessageDialog(null, "Debe ingresar la cantidad de: " + bs);
             } else {
-                total4b = cbs*1500;
+                total4b = cbs * 1500;
                 pedidob4 = " " + bs + " $" + total4b + " ";
             }
         }
-        if(bebida5.isSelected()) {
-            if(cbk <= 0) {
+        if (bebida5.isSelected()) {
+            if (cbk <= 0) {
                 JOptionPane.showMessageDialog(null, "Debe ingresar la cantidad de: " + bk);
             } else {
-                total5b = cbk*1500;
+                total5b = cbk * 1500;
                 pedidob3 = " " + bk + " $" + total5b + " ";
             }
         }
-        if(bebida6.isSelected()) {
-            if(cblitro <= 0) {
+        if (bebida6.isSelected()) {
+            if (cblitro <= 0) {
                 JOptionPane.showMessageDialog(null, "Debe ingresar la cantidad de: " + blitro);
             } else {
-                total6b = cblitro*1700;
+                total6b = cblitro * 1700;
                 pedidob6 = " " + blitro + " $" + total6b + " ";
             }
         }
         totalBebida = total1b + total2b + total3b + total4b + total5b + total6b;
         pedidoBebida = pedidob1 + pedidob2 + pedidob3 + pedidob4 + pedidob5 + pedidob6;
-        
+
 //verificando y calculando valor pedido añadidos
-        if(aniadido1.isSelected()) {
-            if(cpfc <= 0) {
+        if (aniadido1.isSelected()) {
+            if (cpfc <= 0) {
                 JOptionPane.showMessageDialog(null, "Debe ingresar la cantidad de: " + pfc);
             } else {
-                total1a = cpfc*1000;
+                total1a = cpfc * 1000;
                 pedidoa1 = " " + pfc + " $" + total1a + " ";
             }
         }
-        if(aniadido2.isSelected()) {
-            if(cpfm <= 0) {
+        if (aniadido2.isSelected()) {
+            if (cpfm <= 0) {
                 JOptionPane.showMessageDialog(null, "Debe ingresar la cantidad de: " + pfm);
             } else {
-                total2a = cpfm*2000;
+                total2a = cpfm * 2000;
                 pedidoa2 = " " + pfm + " $" + total2a + " ";
             }
         }
-        if(aniadido3.isSelected()) {
-            if(cpfg <= 0) {
+        if (aniadido3.isSelected()) {
+            if (cpfg <= 0) {
                 JOptionPane.showMessageDialog(null, "Debe ingresar la cantidad de: " + pfg);
             } else {
-                total3a = cpfg*3000;
+                total3a = cpfg * 3000;
                 pedidoa3 = " " + pfg + " $" + total3a + " ";
             }
         }
-        if(aniadido4.isSelected()) {
-            if(cpa5 <= 0) {
+        if (aniadido4.isSelected()) {
+            if (cpa5 <= 0) {
                 JOptionPane.showMessageDialog(null, "Debe ingresar la cantidad de: " + pa5);
             } else {
-                total4a = cpa5*2500;
+                total4a = cpa5 * 2500;
                 pedidoa4 = " " + pa5 + " $" + total4a + " ";
             }
         }
         totalAniadido = total1a + total2a + total3a + total4a;
         pedidoAniadido = pedidoa1 + pedidoa2 + pedidoa3 + pedidoa4;
-        
+
 //Agregando
         pedido = pedidoBurger + pedidoBebida + pedidoAniadido;
         total = totalBurger + totalBebida + totalAniadido;
-        Delivery deliv = new Delivery(d, pedido, total, id);
+        Delivery deliv = new Delivery(d, nombre, pedido, total, id);
         AgregarDelivery(deliv);
         JOptionPane.showMessageDialog(null, "Agregado exitosamente");
         identificador.setText(String.valueOf(cont + 1));

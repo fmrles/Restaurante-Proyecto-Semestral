@@ -6,13 +6,15 @@ public class Delivery {
     private String pedido;
     private int precio;
     private int id;
+    private Cliente clienteNombre;
 
     //CONSTRUCTOR
     public Delivery (){
     }
 
-    public Delivery (String direccion, String pedido, int precio, int id){
+    public Delivery (String direccion, Cliente clienteNombre, String pedido, int precio, int id){
      this.direccion = direccion;
+     this.clienteNombre = clienteNombre;
      this.pedido = pedido;
      this.precio = precio;
      this.id = id;
@@ -25,6 +27,15 @@ public class Delivery {
     public void setDireccion ( String direccion){
         this.direccion = direccion;
     }
+
+    public Cliente getClienteNombre() {
+        return clienteNombre;
+    }
+
+    public void setClienteNombre(Cliente clienteNombre) {
+        this.clienteNombre = clienteNombre;
+    }
+    
 
     public String getPedido (){
         return pedido;

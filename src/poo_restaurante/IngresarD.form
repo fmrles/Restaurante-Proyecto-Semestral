@@ -71,7 +71,7 @@
                   <Component id="jLayeredPane1" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLayeredPane2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="Guardar" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                       <Component id="Cancelar" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
@@ -120,7 +120,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="nombreC" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="40" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -168,27 +168,103 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                               <Component id="identificador" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel5" alignment="0" min="-2" pref="196" max="-2" attributes="0"/>
-                          <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="añadidos" max="32767" attributes="0"/>
-                              <Component id="bebida" pref="429" max="32767" attributes="0"/>
-                          </Group>
-                          <Component id="hamburgesa" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="direccion" min="-2" pref="215" max="-2" attributes="0"/>
+                              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="123" max="-2" attributes="0"/>
+                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="direccion" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Component id="burger1" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="burger2" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="burger3" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="burger4" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="burger5" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="h5" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="bebida6" max="32767" attributes="0"/>
+                                          <Component id="bebida5" max="32767" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="b5" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="b6" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="h4" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="bebida4" max="32767" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Component id="h3" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="bebida3" max="32767" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Component id="h2" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="bebida2" max="32767" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Component id="h1" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="bebida1" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="103" alignment="0" groupAlignment="0" attributes="0">
+                                              <Group type="103" alignment="0" groupAlignment="0" attributes="0">
+                                                  <Component id="b1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="b2" alignment="1" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Component id="b3" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="b4" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="97" max="32767" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel5" alignment="0" min="-2" pref="196" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="aniadido4" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="aniadido3" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="aniadido1" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="aniadido2" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="a1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="a2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="a3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="a4" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -201,44 +277,70 @@
                           <Component id="identificador" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="hamburgesa" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="bebida" min="-2" pref="22" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="añadidos" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="direccion" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="burger1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="h1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="bebida1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="b1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="aniadido1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="a1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="burger2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="h2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="bebida2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="b2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="aniadido2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="a2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="burger3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="h3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="bebida3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="b3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="aniadido3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="a3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="burger4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="h4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="bebida4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="b4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="aniadido4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="a4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="burger5" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="h5" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="bebida5" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="b5" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="bebida6" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="b6" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="direccion" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JComboBox" name="bebida">
-              <Properties>
-                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="3">
-                    <StringItem index="0" value="Bebidas en lata (coca cola, fanta, pepsi, sprite, kem $1500 C/U)"/>
-                    <StringItem index="1" value="Bebidas de litro $1700"/>
-                    <StringItem index="2" value=" "/>
-                  </StringArray>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bebidaActionPerformed"/>
-              </Events>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-              </AuxValues>
-            </Component>
             <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -272,25 +374,6 @@
                 <Property name="text" type="java.lang.String" value="Seleccione Bebida"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="hamburgesa">
-              <Properties>
-                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="5">
-                    <StringItem index="0" value="Hamburguesa especial Bacon (Tocino, queso cheedar, aros cebolla) $5000"/>
-                    <StringItem index="1" value="Hamburgesa Romana (Carne, Pepinillos, R&#xfa;cula, choclo, champi&#xf1;&#xf3;n) $6500"/>
-                    <StringItem index="2" value="Hamburguesa BBQ (Carne, Salsa bbq queso, champi&#xf1;on) $6000"/>
-                    <StringItem index="3" value="Hamburguesa especial inform&#xe1;tico (Carne, aros de cebolla, palta, jalape&#xf1;o, lechuga de la huerta) $8000"/>
-                    <StringItem index="4" value="Hamburgesa LGBTQ+ (Tomate, cebolla morada, queso, lechuga, salsa mostaza miel) $7500"/>
-                  </StringArray>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="hamburgesaActionPerformed"/>
-              </Events>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-              </AuxValues>
-            </Component>
             <Component class="javax.swing.JLabel" name="jLabel4">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -301,25 +384,6 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Selecciona Hamburgesa"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JComboBox" name="a&#xf1;adidos">
-              <Properties>
-                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="5">
-                    <StringItem index="0" value="Papas Fritas Chicas $1000"/>
-                    <StringItem index="1" value="Papas Fritas Mediana $2000"/>
-                    <StringItem index="2" value="Papas Fritas Grandes $3000"/>
-                    <StringItem index="3" value="Palitos de ajo 5 unidades $2500"/>
-                    <StringItem index="4" value=" "/>
-                  </StringArray>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="a&#xf1;adidosActionPerformed"/>
-              </Events>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel5">
               <Properties>
@@ -347,6 +411,114 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Direcci&#xf3;n"/>
               </Properties>
+            </Component>
+            <Component class="javax.swing.JToggleButton" name="burger1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Hamburguesa especial Bacon $5000"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JToggleButton" name="burger2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Hamburguesa BBQ $6000"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JToggleButton" name="burger3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Hamburgesa Romana $6500"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JToggleButton" name="burger4">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Hamburgesa LGBTQ+ $7500"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JToggleButton" name="burger5">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Hamburguesa especial inform&#xe1;tico $8000"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JSpinner" name="h1">
+            </Component>
+            <Component class="javax.swing.JSpinner" name="h2">
+            </Component>
+            <Component class="javax.swing.JSpinner" name="h3">
+            </Component>
+            <Component class="javax.swing.JSpinner" name="h4">
+            </Component>
+            <Component class="javax.swing.JSpinner" name="h5">
+            </Component>
+            <Component class="javax.swing.JToggleButton" name="bebida1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Bebida en lata Coca-Cola $1500"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JToggleButton" name="bebida2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Bebida en lata Fanta $1500"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JToggleButton" name="bebida3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Bebida en lata Pepsi $1500"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JToggleButton" name="bebida4">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Bebida en lata Sprite $1500"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bebida4ActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JToggleButton" name="bebida5">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Bebida en lata Kem $1500"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JToggleButton" name="bebida6">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Bebida de litro $1700"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JSpinner" name="b1">
+            </Component>
+            <Component class="javax.swing.JSpinner" name="b2">
+            </Component>
+            <Component class="javax.swing.JSpinner" name="b3">
+            </Component>
+            <Component class="javax.swing.JSpinner" name="b4">
+            </Component>
+            <Component class="javax.swing.JSpinner" name="b5">
+            </Component>
+            <Component class="javax.swing.JSpinner" name="b6">
+            </Component>
+            <Component class="javax.swing.JToggleButton" name="aniadido1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Papas Fritas Chicas $1000"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JToggleButton" name="aniadido2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Papas Fritas Mediana $2000"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JToggleButton" name="aniadido3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Papas Fritas Grandes $3000"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JToggleButton" name="aniadido4">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Palitos de ajo 5u $2500"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JSpinner" name="a1">
+            </Component>
+            <Component class="javax.swing.JSpinner" name="a2">
+            </Component>
+            <Component class="javax.swing.JSpinner" name="a3">
+            </Component>
+            <Component class="javax.swing.JSpinner" name="a4">
             </Component>
           </SubComponents>
         </Container>

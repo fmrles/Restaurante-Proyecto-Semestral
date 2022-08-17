@@ -27,9 +27,11 @@ public class BuscarD extends javax.swing.JInternalFrame {
         String info = " Detalle del pedido \n\n";
         for (int i = 0; i < f.cont; i++) {
             if (ide == f.deli[i].getId()) {
+
                 info = info + "Dirección: " + f.deli[i].getDireccion() + "\n";
-                info = info + "Pedido: " + f.deli[i].getPedido() + "\n";
-                info = info + "Precio: " + f.deli[i].getPrecio() + "\n";
+                info = info + "\nPedido: " + f.deli[i].getPedido() + "\n";
+                info = info + "\nPrecio: " + f.deli[i].getPrecio() + "\n";
+
             }
         }
         return info;

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
- */
 package poo_restaurante;
 
 import javax.swing.JOptionPane;
@@ -10,50 +6,88 @@ import javax.swing.JOptionPane;
  *
  * @author Cphyros
  */
-public class IngresarD extends javax.swing.JInternalFrame {
+public class IngresarP extends javax.swing.JInternalFrame {
 
-    public IngresarC form;
-    public Pedido[] deli;
+    //ATRIBUTOS
+    public IngresarC formIngresarC;
+    public Pedido[] deliArray;
     public int cont;
 
-    /**
-     * Creates new form IngresarD
-     */
-    public IngresarD(IngresarC form2) {
+    //CONSTRUCTOR
+    public IngresarP(IngresarC form2) {
         initComponents();
-        form = form2;
-        this.CargarComboNombre();
-        deli = new Pedido[100];
+        formIngresarC = form2;
+        CargarComboNombre(formIngresarC);
+        deliArray = new Pedido[50];
         cont = 0;
         this.identificador.setText(String.valueOf(cont + 1));
     }
 
-    public void CargarComboNombre() {
+    //SOLO VUELVE A RESTAURAR LOS CAMPOS
+    public void borrarCampos() {
+        this.direccion.setText("");
+        this.burger1.setSelected(false);
+        this.burger2.setSelected(false);
+        this.burger3.setSelected(false);
+        this.burger4.setSelected(false);
+        this.burger5.setSelected(false);
+        this.h1.setValue(0);
+        this.h2.setValue(0);
+        this.h3.setValue(0);
+        this.h4.setValue(0);
+        this.h5.setValue(0);
+        this.bebida1.setSelected(false);
+        this.bebida2.setSelected(false);
+        this.bebida3.setSelected(false);
+        this.bebida4.setSelected(false);
+        this.bebida5.setSelected(false);
+        this.bebida6.setSelected(false);
+        this.b1.setValue(0);
+        this.b2.setValue(0);
+        this.b3.setValue(0);
+        this.b4.setValue(0);
+        this.b5.setValue(0);
+        this.b6.setValue(0);
+        this.aniadido1.setSelected(false);
+        this.aniadido2.setSelected(false);
+        this.aniadido3.setSelected(false);
+        this.aniadido4.setSelected(false);
+        this.a1.setValue(0);
+        this.a2.setValue(0);
+        this.a3.setValue(0);
+        this.a4.setValue(0);
+    }
+
+    //USANDO EL OBJETO DE LA CLASE IngresarC SE CARGA EN EL COMBOBOX LOS NOMBRES DE LOS CLIENTES
+    public void CargarComboNombre(IngresarC formIngresarC) {
         nombreC.removeAllItems();
-        for (int i = 0; i < form.cont; i++) {
-            nombreC.addItem(form.cl[i].getNombre());
+        for (int i = 0; i < formIngresarC.cont; i++) {
+            nombreC.addItem(formIngresarC.clArray[i].getNombre());
         }
     }
 
+    //SE UTILIZA PARA DEVOLVER EL NOMBRE DEL CLIENTE COMO UN OBJETO DE LA CLASE Cliente
     public Cliente getCliente(String nombre) {
-        for (int i = 0; i < form.cont; i++) {
-            if (form.cl[i].getNombre().equals(nombre)) {
-                return form.cl[i];
+        for (int i = 0; i < formIngresarC.cont; i++) {
+            if (formIngresarC.clArray[i].getNombre().equals(nombre)) {
+                return formIngresarC.clArray[i];
             }
         }
         return null;
     }
 
+    //AGREGA PEDIDO SOLO SI EL CONTADOR DE PEDIDOS NO SOBREPASA EL TAMAÑO DE LA ARRAY
     public void AgregarDelivery(Pedido d) {
-        if (cont < deli.length) {
-            deli[cont] = d;
-            JOptionPane.showMessageDialog(null, "Pedido de " + deli[cont].getClienteNombre().getNombre() + " esta listo");
+        if (cont < deliArray.length) {
+            deliArray[cont] = d;
+            JOptionPane.showMessageDialog(null, "Pedido de " + deliArray[cont].getClienteNombre().getNombre() + " esta listo");
             cont++;
         } else {
             JOptionPane.showMessageDialog(null, "No se ha podido ingresar el pedido");
         }
     }
 
+    //SOLO SI EL CONTADOR DE PEDIDOSS ES MAS QUE CERO SE LISTARAN LOS PEDIDOS HASTA EL MOMENTO AGREGADOS    
     public String listarDeliverys() {
         String info = " Deliverys registradas \n\n";
         if (cont == 0) {
@@ -61,18 +95,13 @@ public class IngresarD extends javax.swing.JInternalFrame {
         } else {
             for (int i = 0; i < cont; i++) {
 
-                info = info + "  " + deli[i].getClienteNombre().getNombre() + "  " + deli[i].getId() + " " + deli[i].getDireccion() + "  " + deli[i].getPedido() + "\n TOTAL= $" + deli[i].getPrecio() + "\n";
+                info = info + "  " + deliArray[i].getClienteNombre().getNombre() + "  " + deliArray[i].getId() + " " + deliArray[i].getDireccion() + "  " + deliArray[i].getPedido() + "\n TOTAL= $" + deliArray[i].getPrecio() + "\n";
 
             }
         }
         return info;
     }
 
-    /**
-     * This method is called from within the constructor to initialize the form.
-     * WARNING: Do NOT modify this code. The content of this method is always
-     * regenerated by the Form Editor.
-     */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -119,10 +148,10 @@ public class IngresarD extends javax.swing.JInternalFrame {
         a3 = new javax.swing.JSpinner();
         a4 = new javax.swing.JSpinner();
         Guardar = new javax.swing.JButton();
-        Cancelar = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(145, 31, 39));
         setClosable(true);
+        setTitle("Ingresar Pedidos");
 
         jPanel1.setBackground(new java.awt.Color(145, 31, 39));
 
@@ -130,7 +159,6 @@ public class IngresarD extends javax.swing.JInternalFrame {
         jLayeredPane1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(250, 206, 127)), "Nombre Cliente", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.ABOVE_TOP, new java.awt.Font("Cooper Black", 0, 36), new java.awt.Color(250, 206, 127))); // NOI18N
         jLayeredPane1.setFont(new java.awt.Font("Cooper Black", 0, 12)); // NOI18N
 
-        nombreC.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         nombreC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nombreCActionPerformed(evt);
@@ -403,19 +431,13 @@ public class IngresarD extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        Guardar.setBackground(new java.awt.Color(84, 186, 185));
+        Guardar.setBackground(new java.awt.Color(250, 206, 127));
+        Guardar.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        Guardar.setForeground(new java.awt.Color(102, 102, 102));
         Guardar.setText("Guardar");
         Guardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 GuardarActionPerformed(evt);
-            }
-        });
-
-        Cancelar.setBackground(new java.awt.Color(186, 84, 85));
-        Cancelar.setText("Cancelar");
-        Cancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CancelarActionPerformed(evt);
             }
         });
 
@@ -428,8 +450,6 @@ public class IngresarD extends javax.swing.JInternalFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Guardar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(56, 56, 56)
-                .addComponent(Cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -439,9 +459,7 @@ public class IngresarD extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLayeredPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Guardar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(Guardar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -465,8 +483,8 @@ public class IngresarD extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_nombreCActionPerformed
 
+    //SE VALIDAN Y AGREGAN LOS DATOS DEL PEDIDO    
     private void GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarActionPerformed
-        // TODO add your handling code here:
         String clNom = (String) nombreC.getSelectedItem();
         Cliente nombre = getCliente(clNom);
         String d = direccion.getText();
@@ -494,7 +512,7 @@ public class IngresarD extends javax.swing.JInternalFrame {
         int totalBurger = 0;
         int totalBebida = 0;
         int totalAniadido = 0;
-        //Hamburgesas
+//Hamburgesas
         String eb = burger1.getText();
         String bbq = burger2.getText();
         String ro = burger3.getText();
@@ -510,7 +528,7 @@ public class IngresarD extends javax.swing.JInternalFrame {
         int total3h = 0;
         int total4h = 0;
         int total5h = 0;
-        //Bebidas
+//Bebidas
         String bcc = bebida1.getText();
         String bf = bebida2.getText();
         String bp = bebida3.getText();
@@ -529,7 +547,7 @@ public class IngresarD extends javax.swing.JInternalFrame {
         int total4b = 0;
         int total5b = 0;
         int total6b = 0;
-        //Añadidos
+//Añadidos
         String pfc = aniadido1.getText();
         String pfm = aniadido2.getText();
         String pfg = aniadido3.getText();
@@ -678,19 +696,20 @@ public class IngresarD extends javax.swing.JInternalFrame {
 //Agregando
         pedido = pedidoBurger + pedidoBebida + pedidoAniadido;
         total = totalBurger + totalBebida + totalAniadido;
-        Pedido deliv = new Pedido(d, nombre, pedido, total, id);
-        AgregarDelivery(deliv);
-        JOptionPane.showMessageDialog(null, "Agregado exitosamente");
+        if (pedido.isEmpty() == false && total > 0) {
+            Pedido deliv = new Pedido(d, nombre, pedido, total, id);
+            AgregarDelivery(deliv);
+            JOptionPane.showMessageDialog(null, "Agregado exitosamente");
+        } else {
+            JOptionPane.showMessageDialog(null, "Debe ingresar algun pedido");
+        }
         identificador.setText(String.valueOf(cont + 1));
+        borrarCampos();
     }//GEN-LAST:event_GuardarActionPerformed
 
     private void direccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_direccionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_direccionActionPerformed
-
-    private void CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CancelarActionPerformed
 
     private void bebida4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bebida4ActionPerformed
         // TODO add your handling code here:
@@ -698,7 +717,6 @@ public class IngresarD extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Cancelar;
     private javax.swing.JButton Guardar;
     private javax.swing.JSpinner a1;
     private javax.swing.JSpinner a2;

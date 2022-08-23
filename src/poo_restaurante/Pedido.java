@@ -1,6 +1,7 @@
 package poo_restaurante;
 
 public class Pedido {
+
     //ATRIBUTOS
     private String direccion;
     private String pedido;
@@ -9,22 +10,20 @@ public class Pedido {
     private Cliente clienteNombre;
 
     //CONSTRUCTOR
-    public Pedido (){
+    public Pedido(String direccion, Cliente clienteNombre, String pedido, int precio, int id) {
+        this.direccion = direccion;
+        this.clienteNombre = clienteNombre;
+        this.pedido = pedido;
+        this.precio = precio;
+        this.id = id;
     }
 
-    public Pedido (String direccion, Cliente clienteNombre, String pedido, int precio, int id){
-     this.direccion = direccion;
-     this.clienteNombre = clienteNombre;
-     this.pedido = pedido;
-     this.precio = precio;
-     this.id = id;
+    //GET Y SET
+    public String getDireccion() {
+        return direccion;
     }
 
-    public String getDireccion (){
-     return direccion;
-    }
-
-    public void setDireccion ( String direccion){
+    public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
 
@@ -35,21 +34,20 @@ public class Pedido {
     public void setClienteNombre(Cliente clienteNombre) {
         this.clienteNombre = clienteNombre;
     }
-    
 
-    public String getPedido (){
+    public String getPedido() {
         return pedido;
     }
 
-    public void setPedido (String pedido){
+    public void setPedido(String pedido) {
         this.pedido = pedido;
     }
 
-    public int getPrecio (){
+    public int getPrecio() {
         return precio;
     }
 
-    public void setPrecio (int precioEnvio){
+    public void setPrecio(int precioEnvio) {
         this.precio = precioEnvio;
     }
 
@@ -61,5 +59,4 @@ public class Pedido {
         this.id = id;
     }
 
-    
 }

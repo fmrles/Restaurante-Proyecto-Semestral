@@ -12,9 +12,9 @@ import javax.swing.JOptionPane;
  */
 public class Menu extends javax.swing.JFrame { //Herencia
 
-    IngresarC form1;
-    IngresarD form3;// Asociacion Composicion
-    IngresarT form5;
+    IngresarC formIngresarC;
+    IngresarP formIngresarP;// Asociacion Composicion
+    IngresarT formIngresarT;
 
     /**
      * Creates new form Menu
@@ -22,9 +22,10 @@ public class Menu extends javax.swing.JFrame { //Herencia
     public Menu() {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
-        form1 = new IngresarC();
-        form3 = new IngresarD(form1);
-        form5 = new IngresarT();
+        setTitle("Menú");
+        formIngresarC = new IngresarC();
+        formIngresarP = new IngresarP(formIngresarC);
+        formIngresarT = new IngresarT();
     }
 
     /**
@@ -41,11 +42,11 @@ public class Menu extends javax.swing.JFrame { //Herencia
         LOGO = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
-        GestionarCliyDev = new javax.swing.JMenu();
+        GestionarCliyPed = new javax.swing.JMenu();
         IngresarCliente = new javax.swing.JMenuItem();
         ListadoDeClientes = new javax.swing.JMenuItem();
         BuscarCliente = new javax.swing.JMenuItem();
-        GestionarVen = new javax.swing.JMenu();
+        GestionarTra = new javax.swing.JMenu();
         IngresarTrabajador = new javax.swing.JMenuItem();
         ListarTrab = new javax.swing.JMenuItem();
         BuscarTrab = new javax.swing.JMenuItem();
@@ -65,7 +66,7 @@ public class Menu extends javax.swing.JFrame { //Herencia
         BG.setBackground(new java.awt.Color(145, 31, 39));
 
         LOGO.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LOGO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenés/burgerwings.png"))); // NOI18N
+        LOGO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenés/logoDelRestaurante.png"))); // NOI18N
         LOGO.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         jLabel1.setFont(new java.awt.Font("Cooper Black", 0, 68)); // NOI18N
@@ -83,8 +84,7 @@ public class Menu extends javax.swing.JFrame { //Herencia
         BGLayout.setVerticalGroup(
             BGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BGLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(LOGO, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(LOGO, javax.swing.GroupLayout.DEFAULT_SIZE, 293, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30))
@@ -103,10 +103,13 @@ public class Menu extends javax.swing.JFrame { //Herencia
             .addComponent(BG, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        GestionarCliyDev.setForeground(new java.awt.Color(102, 102, 102));
-        GestionarCliyDev.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenés/delivery-man.png"))); // NOI18N
-        GestionarCliyDev.setText("Gestionar Cliente y Delivery");
-        GestionarCliyDev.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        menuBar.setForeground(new java.awt.Color(51, 51, 51));
+        menuBar.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+
+        GestionarCliyPed.setForeground(new java.awt.Color(51, 51, 51));
+        GestionarCliyPed.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenés/gestionarClientes.png"))); // NOI18N
+        GestionarCliyPed.setText("Gestionar Clientes");
+        GestionarCliyPed.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
 
         IngresarCliente.setText("Ingresar Cliente");
         IngresarCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -114,7 +117,7 @@ public class Menu extends javax.swing.JFrame { //Herencia
                 IngresarClienteActionPerformed(evt);
             }
         });
-        GestionarCliyDev.add(IngresarCliente);
+        GestionarCliyPed.add(IngresarCliente);
 
         ListadoDeClientes.setText("Listado de Clientes");
         ListadoDeClientes.addActionListener(new java.awt.event.ActionListener() {
@@ -122,7 +125,7 @@ public class Menu extends javax.swing.JFrame { //Herencia
                 ListadoDeClientesActionPerformed(evt);
             }
         });
-        GestionarCliyDev.add(ListadoDeClientes);
+        GestionarCliyPed.add(ListadoDeClientes);
 
         BuscarCliente.setText("Buscar Cliente");
         BuscarCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -130,16 +133,16 @@ public class Menu extends javax.swing.JFrame { //Herencia
                 BuscarClienteActionPerformed(evt);
             }
         });
-        GestionarCliyDev.add(BuscarCliente);
+        GestionarCliyPed.add(BuscarCliente);
 
-        menuBar.add(GestionarCliyDev);
+        menuBar.add(GestionarCliyPed);
 
-        GestionarVen.setForeground(new java.awt.Color(102, 102, 102));
-        GestionarVen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenés/waiter.png"))); // NOI18N
-        GestionarVen.setText("Gestionar Trabajadores");
-        GestionarVen.addActionListener(new java.awt.event.ActionListener() {
+        GestionarTra.setForeground(new java.awt.Color(51, 51, 51));
+        GestionarTra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenés/gestionarTrabajadores.png"))); // NOI18N
+        GestionarTra.setText("Gestionar Trabajadores");
+        GestionarTra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GestionarVenActionPerformed(evt);
+                GestionarTraActionPerformed(evt);
             }
         });
 
@@ -149,7 +152,7 @@ public class Menu extends javax.swing.JFrame { //Herencia
                 IngresarTrabajadorActionPerformed(evt);
             }
         });
-        GestionarVen.add(IngresarTrabajador);
+        GestionarTra.add(IngresarTrabajador);
 
         ListarTrab.setText("Listar Trabajadores");
         ListarTrab.addActionListener(new java.awt.event.ActionListener() {
@@ -157,7 +160,7 @@ public class Menu extends javax.swing.JFrame { //Herencia
                 ListarTrabActionPerformed(evt);
             }
         });
-        GestionarVen.add(ListarTrab);
+        GestionarTra.add(ListarTrab);
 
         BuscarTrab.setText("Buscar Trabajador");
         BuscarTrab.addActionListener(new java.awt.event.ActionListener() {
@@ -165,7 +168,7 @@ public class Menu extends javax.swing.JFrame { //Herencia
                 BuscarTrabActionPerformed(evt);
             }
         });
-        GestionarVen.add(BuscarTrab);
+        GestionarTra.add(BuscarTrab);
 
         ListarTXP.setText("Listar Trabajadores por Puesto");
         ListarTXP.addActionListener(new java.awt.event.ActionListener() {
@@ -173,12 +176,12 @@ public class Menu extends javax.swing.JFrame { //Herencia
                 ListarTXPActionPerformed(evt);
             }
         });
-        GestionarVen.add(ListarTXP);
+        GestionarTra.add(ListarTXP);
 
-        menuBar.add(GestionarVen);
+        menuBar.add(GestionarTra);
 
-        GestionarPed.setForeground(new java.awt.Color(102, 102, 102));
-        GestionarPed.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenés/choices.png"))); // NOI18N
+        GestionarPed.setForeground(new java.awt.Color(51, 51, 51));
+        GestionarPed.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenés/gestionarPedidos.png"))); // NOI18N
         GestionarPed.setText("Gestionar Pedidos");
 
         IngresarPedido.setText("Ingresar Pedido");
@@ -238,50 +241,21 @@ public class Menu extends javax.swing.JFrame { //Herencia
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void IngresarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresarClienteActionPerformed
-        desktopPane.add(form1);
-        form1.setVisible(true);
-    }//GEN-LAST:event_IngresarClienteActionPerformed
-
     private void IngresarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresarPedidoActionPerformed
-        if (form1.cont > 0) {
-            form3 = new IngresarD(form1);
-            desktopPane.add(form3);
-            form3.setVisible(true);
+        if (formIngresarC.cont > 0) {
+            formIngresarP.CargarComboNombre(formIngresarC);
+            desktopPane.add(formIngresarP);
+            formIngresarP.setVisible(true);
         } else {
             JOptionPane.showMessageDialog(null, "Ingrese cliente primero");
         }
     }//GEN-LAST:event_IngresarPedidoActionPerformed
 
-    private void ListadoDeClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListadoDeClientesActionPerformed
-        // TODO add your handling code here:
-        if (form1.cont > 0) {
-            String info = form1.listarClientes();
-            ListarC form2 = new ListarC(info); // Dependencia
-            desktopPane.add(form2);
-            form2.setVisible(true);
-        } else {
-            JOptionPane.showMessageDialog(null, "No hay información disponible de clientes");
-        }
-    }//GEN-LAST:event_ListadoDeClientesActionPerformed
-
-    private void BuscarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarClienteActionPerformed
-        // TODO add your handling code here:
-        if (form1.cont > 0) {
-            BuscarC form2 = new BuscarC(form1);
-            desktopPane.add(form2);
-            form2.setVisible(true);
-        } else {
-            JOptionPane.showMessageDialog(null, "No ay información para buscar");
-        }
-    }//GEN-LAST:event_BuscarClienteActionPerformed
-
     private void ListadoDePediActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListadoDePediActionPerformed
         // TODO add your handling code here:
-        if (form3.cont > 0) {
-            String info = form3.listarDeliverys();
-            ListarD form4 = new ListarD(info);
+        if (formIngresarP.cont > 0) {
+            String info = formIngresarP.listarDeliverys();
+            ListarP form4 = new ListarP(info);
             desktopPane.add(form4);
             form4.setVisible(true);
         } else {
@@ -291,8 +265,8 @@ public class Menu extends javax.swing.JFrame { //Herencia
 
     private void BuscarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarPedidoActionPerformed
         // TODO add your handling code here:
-        if (form3.cont > 0) {
-            BuscarD form2 = new BuscarD(form3);
+        if (formIngresarP.cont > 0) {
+            BuscarP form2 = new BuscarP(formIngresarP);
             desktopPane.add(form2);
             form2.setVisible(true);
         } else {
@@ -302,8 +276,8 @@ public class Menu extends javax.swing.JFrame { //Herencia
 
     private void ListadoPenTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListadoPenTActionPerformed
         // TODO add your handling code here:
-        if (form3.cont > 0) {
-            ListarPedidos2 form4 = new ListarPedidos2(form3);
+        if (formIngresarP.cont > 0) {
+            ListarPedidos2 form4 = new ListarPedidos2(formIngresarP);
             desktopPane.add(form4);
             form4.setVisible(true);
         } else {
@@ -313,8 +287,8 @@ public class Menu extends javax.swing.JFrame { //Herencia
 
     private void ListarPedporClieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListarPedporClieActionPerformed
         // TODO add your handling code here:
-        if (form1.cont > 0) {
-            ListarXC form4 = new ListarXC(form3);
+        if (formIngresarC.cont > 0) {
+            ListarXC form4 = new ListarXC(formIngresarP);
             desktopPane.add(form4);
             form4.setVisible(true);
         } else {
@@ -322,20 +296,20 @@ public class Menu extends javax.swing.JFrame { //Herencia
         }
     }//GEN-LAST:event_ListarPedporClieActionPerformed
 
-    private void GestionarVenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GestionarVenActionPerformed
+    private void GestionarTraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GestionarTraActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_GestionarVenActionPerformed
+    }//GEN-LAST:event_GestionarTraActionPerformed
 
     private void IngresarTrabajadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresarTrabajadorActionPerformed
         // TODO add your handling code here:
-        desktopPane.add(form5);
-        form5.setVisible(true);
+        desktopPane.add(formIngresarT);
+        formIngresarT.setVisible(true);
     }//GEN-LAST:event_IngresarTrabajadorActionPerformed
 
     private void ListarTrabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListarTrabActionPerformed
         // TODO add your handling code here:
-        if (form5.cont > 0) {
-            ListarTrabajadores form2 = new ListarTrabajadores(form5); // Dependencia
+        if (formIngresarT.cont > 0) {
+            ListarTrabajadores form2 = new ListarTrabajadores(formIngresarT); // Dependencia
             desktopPane.add(form2);
             form2.setVisible(true);
         } else {
@@ -345,8 +319,8 @@ public class Menu extends javax.swing.JFrame { //Herencia
 
     private void BuscarTrabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarTrabActionPerformed
         // TODO add your handling code here:
-        if (form5.cont > 0) {
-            BuscarT form2 = new BuscarT(form5);
+        if (formIngresarT.cont > 0) {
+            BuscarT form2 = new BuscarT(formIngresarT);
             desktopPane.add(form2);
             form2.setVisible(true);
         } else {
@@ -356,14 +330,43 @@ public class Menu extends javax.swing.JFrame { //Herencia
 
     private void ListarTXPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListarTXPActionPerformed
         // TODO add your handling code here:
-        if (form5.cont > 0) {
-            ListarXP form4 = new ListarXP(form5);
+        if (formIngresarT.cont > 0) {
+            ListarXP form4 = new ListarXP(formIngresarT);
             desktopPane.add(form4);
             form4.setVisible(true);
         } else {
             JOptionPane.showMessageDialog(null, "No hay información disponible");
         }
     }//GEN-LAST:event_ListarTXPActionPerformed
+
+    private void BuscarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarClienteActionPerformed
+        // TODO add your handling code here:
+        if (formIngresarC.cont > 0) {
+            BuscarC form2 = new BuscarC(formIngresarC);
+            desktopPane.add(form2);
+            form2.setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(null, "No ay información para buscar");
+        }
+    }//GEN-LAST:event_BuscarClienteActionPerformed
+
+    private void ListadoDeClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListadoDeClientesActionPerformed
+        // TODO add your handling code here:
+        if (formIngresarC.cont > 0) {
+            String info = formIngresarC.listarClientes();
+            ListarC form2 = new ListarC(info); // Dependencia
+            desktopPane.add(form2);
+            form2.setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(null, "No hay información disponible de clientes");
+        }
+    }//GEN-LAST:event_ListadoDeClientesActionPerformed
+
+    private void IngresarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresarClienteActionPerformed
+        desktopPane.add(formIngresarC);
+        formIngresarC.setVisible(true);
+        
+    }//GEN-LAST:event_IngresarClienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -396,6 +399,7 @@ public class Menu extends javax.swing.JFrame { //Herencia
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Menu().setVisible(true);
+                
             }
         });
     }
@@ -405,9 +409,9 @@ public class Menu extends javax.swing.JFrame { //Herencia
     public javax.swing.JMenuItem BuscarCliente;
     public javax.swing.JMenuItem BuscarPedido;
     public javax.swing.JMenuItem BuscarTrab;
-    public javax.swing.JMenu GestionarCliyDev;
+    public javax.swing.JMenu GestionarCliyPed;
     public javax.swing.JMenu GestionarPed;
-    public javax.swing.JMenu GestionarVen;
+    public javax.swing.JMenu GestionarTra;
     public javax.swing.JMenuItem IngresarCliente;
     public javax.swing.JMenuItem IngresarPedido;
     public javax.swing.JMenuItem IngresarTrabajador;

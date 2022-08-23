@@ -3,6 +3,7 @@
 <Form version="1.9" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JInternalFrameFormInfo">
   <Properties>
     <Property name="closable" type="boolean" value="true"/>
+    <Property name="title" type="java.lang.String" value="Ingresar Clientes"/>
     <Property name="requestFocusEnabled" type="boolean" value="false"/>
     <Property name="verifyInputWhenFocusTarget" type="boolean" value="false"/>
   </Properties>

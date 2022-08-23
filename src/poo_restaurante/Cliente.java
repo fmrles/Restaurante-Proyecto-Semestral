@@ -1,19 +1,18 @@
 package poo_restaurante;
 
-import java.util.ArrayList;
-
 public class Cliente {
 
     //ATRIBUTOS
     private String nombre;
     private String celular;
     private int id;
-    
+
+    // CONSTRUCTOR
     public Cliente(String n, String c, int id) {
         this.nombre = n;
         this.celular = c;
         this.id = id;
-        
+
     }
 
     //GET Y SET
@@ -40,8 +39,5 @@ public class Cliente {
     public void setId(int id) {
         this.id = id;
     }
-    
-    
-    
 
 }

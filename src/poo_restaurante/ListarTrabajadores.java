@@ -13,14 +13,14 @@ import javax.swing.table.DefaultTableModel;
 public class ListarTrabajadores extends javax.swing.JInternalFrame {
 
     DefaultTableModel modelo;
-    IngresarT form1;
+    IngresarT formIngresarT;
 
     /**
      * Creates new form ListarTrabajadores
      */
     public ListarTrabajadores(IngresarT form) {
         initComponents();
-        form1 = form;
+        formIngresarT = form;
         modelo = new DefaultTableModel();
         modelo.addColumn("Nombre");
         modelo.addColumn("Rut");
@@ -33,9 +33,9 @@ public class ListarTrabajadores extends javax.swing.JInternalFrame {
         listado.setModel(modelo);
         modelo.getDataVector().clear();
         int i = 0;
-        Trabajador e[] = form1.tra;
+        Trabajador e[] = formIngresarT.traArray;
         Object [] fila = new Object[4];
-        while (i < form1.cont) {
+        while (i < formIngresarT.cont) {
             fila[0] = e[i].getNombre();
             fila[1] = e[i].getRut();
             fila[2] = e[i].getPuesto();
@@ -62,6 +62,7 @@ public class ListarTrabajadores extends javax.swing.JInternalFrame {
         listado = new javax.swing.JTable();
 
         setClosable(true);
+        setTitle("Lista de Trabajadores en Tabla");
 
         jPanel1.setBackground(new java.awt.Color(145, 31, 39));
         jPanel1.setForeground(new java.awt.Color(145, 31, 39));
@@ -73,7 +74,7 @@ public class ListarTrabajadores extends javax.swing.JInternalFrame {
         NombreLogo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenés/headhunting.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenés/listarPorPuesto.png"))); // NOI18N
 
         listado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

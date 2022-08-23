@@ -1,14 +1,14 @@
 package poo_restaurante;
 
-import java.util.ArrayList;
-
 public class Trabajador {
+
     //ATRIBUTOS
     private String nombre;
     private String rut;
     private String puesto;
     private String fono;
 
+    //CONSTRUCTOR
     public Trabajador(String nombre, String rut, String puesto, String fono) {
         this.nombre = nombre;
         this.rut = rut;
@@ -16,6 +16,7 @@ public class Trabajador {
         this.fono = fono;
     }
 
+    //GET Y SET
     public String getNombre() {
         return nombre;
     }
@@ -47,8 +48,5 @@ public class Trabajador {
     public void setFono(String fono) {
         this.fono = fono;
     }
-    
-    
-    
-    
+
 }

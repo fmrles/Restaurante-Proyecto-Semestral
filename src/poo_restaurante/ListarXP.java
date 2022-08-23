@@ -14,14 +14,14 @@ import javax.swing.table.DefaultTableModel;
 public class ListarXP extends javax.swing.JInternalFrame {
 
     DefaultTableModel modelo;
-    IngresarT form1;
+    IngresarT formIngresarT;
 
     /**
      * Creates new form ListarXP
      */
     public ListarXP(IngresarT form) {
         initComponents();
-        form1 = form;
+        formIngresarT = form;
         modelo = new DefaultTableModel();
         modelo.addColumn("Nombre");
         modelo.addColumn("Rut");
@@ -32,20 +32,15 @@ public class ListarXP extends javax.swing.JInternalFrame {
     public void CargarTabla(String puesto) {
         listado.setModel(modelo);
         modelo.getDataVector().clear();
-        int i = 0;
-        Trabajador e[] = form1.tra;
+        Trabajador e[] = formIngresarT.traArray;
         Object[] fila = new Object[3];
-        while (i < form1.cont) {
-            if (puesto.equals(form1.tra[i].getPuesto())) {
+        for (int i = 0; i < formIngresarT.cont; i++) {
+            if (puesto.equals(e[i].getPuesto())) {
                 fila[0] = e[i].getNombre();
                 fila[1] = e[i].getRut();
                 fila[2] = e[i].getFono();
                 modelo.addRow(fila);
-                
-            } else {
-                JOptionPane.showMessageDialog(null, "No se ha ingresado un trabajador con ese puesto");
-            }
-            i++;
+            } 
         }
     }
 
@@ -68,6 +63,7 @@ public class ListarXP extends javax.swing.JInternalFrame {
         listado = new javax.swing.JTable();
 
         setClosable(true);
+        setTitle("Listado de Trabajadores por Puesto en Tabla");
 
         jPanel1.setBackground(new java.awt.Color(145, 31, 39));
 
@@ -83,12 +79,12 @@ public class ListarXP extends javax.swing.JInternalFrame {
         jLabel1.setText("Nombre Puesto");
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenés/headhunting.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenés/listarPorPuesto.png"))); // NOI18N
 
         puesto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "GERENTE", "CHEF", "MESERO", "COPERO", "CAJERO" }));
 
-        buscar.setBackground(new java.awt.Color(255, 255, 204));
-        buscar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        buscar.setBackground(new java.awt.Color(250, 206, 127));
+        buscar.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         buscar.setForeground(new java.awt.Color(51, 51, 51));
         buscar.setText("Buscar");
         buscar.addActionListener(new java.awt.event.ActionListener() {
@@ -117,19 +113,17 @@ public class ListarXP extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(NombreLogo, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(NombreLogo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(puesto, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(121, 121, 121)
-                                        .addComponent(buscar)))
-                                .addGap(217, 217, 217)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(puesto, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(121, 121, 121)
+                                .addComponent(buscar)))
+                        .addGap(118, 118, 118)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(99, 99, 99))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );

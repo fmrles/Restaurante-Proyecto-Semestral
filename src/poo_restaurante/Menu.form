@@ -3,16 +3,24 @@
 <Form version="1.9" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
     <Menu class="javax.swing.JMenuBar" name="menuBar">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="33" green="33" red="33" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI Semibold" size="14" style="0"/>
+        </Property>
+      </Properties>
       <SubComponents>
-        <Menu class="javax.swing.JMenu" name="GestionarCliyDev">
+        <Menu class="javax.swing.JMenu" name="GestionarCliyPed">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="66" green="66" red="66" type="rgb"/>
+              <Color blue="33" green="33" red="33" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/imagen&#xe9;s/delivery-man.png"/>
+              <Image iconType="3" name="/imagen&#xe9;s/gestionarClientes.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Gestionar Cliente y Delivery"/>
+            <Property name="text" type="java.lang.String" value="Gestionar Clientes"/>
             <Property name="horizontalTextPosition" type="int" value="4"/>
           </Properties>
           <SubComponents>
@@ -42,18 +50,18 @@
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="GestionarVen">
+        <Menu class="javax.swing.JMenu" name="GestionarTra">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="66" green="66" red="66" type="rgb"/>
+              <Color blue="33" green="33" red="33" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/imagen&#xe9;s/waiter.png"/>
+              <Image iconType="3" name="/imagen&#xe9;s/gestionarTrabajadores.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Gestionar Trabajadores"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GestionarVenActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GestionarTraActionPerformed"/>
           </Events>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="IngresarTrabajador">
@@ -93,10 +101,10 @@
         <Menu class="javax.swing.JMenu" name="GestionarPed">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="66" green="66" red="66" type="rgb"/>
+              <Color blue="33" green="33" red="33" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/imagen&#xe9;s/choices.png"/>
+              <Image iconType="3" name="/imagen&#xe9;s/gestionarPedidos.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Gestionar Pedidos"/>
           </Properties>
@@ -219,8 +227,7 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                      <Component id="LOGO" max="32767" attributes="0"/>
+                      <Component id="LOGO" pref="293" max="32767" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" pref="105" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
@@ -233,7 +240,7 @@
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/imagen&#xe9;s/burgerwings.png"/>
+                  <Image iconType="3" name="/imagen&#xe9;s/logoDelRestaurante.png"/>
                 </Property>
                 <Property name="horizontalTextPosition" type="int" value="0"/>
               </Properties>

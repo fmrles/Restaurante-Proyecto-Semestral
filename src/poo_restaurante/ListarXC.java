@@ -16,16 +16,16 @@ import javax.swing.table.DefaultTableModel;
 public class ListarXC extends javax.swing.JInternalFrame {
 
     DefaultTableModel modelo;
-    IngresarD form1;
+    IngresarP formIngresarP;
     //IngresarC form2;
 
     /**
      * Creates new form ListarXC
      */
-    public ListarXC(IngresarD form) {
+    public ListarXC(IngresarP form) {
         initComponents();
         //this.CargarTabla(nombre.getText());
-        form1 = form;
+        formIngresarP = form;
         modelo = new DefaultTableModel();
         modelo.addColumn("Identificación");
         modelo.addColumn("Dirección");
@@ -37,24 +37,18 @@ public class ListarXC extends javax.swing.JInternalFrame {
         listado.setModel(modelo);
         modelo.getDataVector().clear();
         int i = 0;
-        Pedido e[] = form1.deli;
+        Pedido e[] = formIngresarP.deliArray;
         Object[] fila = new Object[4];
-        while (i < form1.cont) {
-
-            if (nombre.equals(form1.deli[i].getClienteNombre().getNombre())) {
+        while (i < formIngresarP.cont) {
+            if (nombre.equals(formIngresarP.deliArray[i].getClienteNombre().getNombre())) {
                 fila[0] = e[i].getId();
                 fila[1] = e[i].getDireccion();
                 fila[2] = e[i].getPedido();
                 fila[3] = e[i].getPrecio();
                 modelo.addRow(fila);
-
-            } else {
-                JOptionPane.showMessageDialog(null, "No se ha ingresado un cliente con ese nombre");
             }
             i++;
-
         }
-
     }
 
     /**
@@ -76,11 +70,12 @@ public class ListarXC extends javax.swing.JInternalFrame {
         listado = new javax.swing.JTable();
 
         setClosable(true);
+        setTitle("Listado de Pedidos por Clientes en Tabla");
 
         jPanel1.setBackground(new java.awt.Color(145, 31, 39));
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenés/order-food.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenés/listarPorCliente.png"))); // NOI18N
 
         NombreLogo.setFont(new java.awt.Font("Cooper Black", 0, 36)); // NOI18N
         NombreLogo.setForeground(new java.awt.Color(250, 206, 127));
@@ -99,8 +94,8 @@ public class ListarXC extends javax.swing.JInternalFrame {
             }
         });
 
-        buscar.setBackground(new java.awt.Color(255, 255, 204));
-        buscar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        buscar.setBackground(new java.awt.Color(250, 206, 127));
+        buscar.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         buscar.setForeground(new java.awt.Color(51, 51, 51));
         buscar.setText("Buscar");
         buscar.addActionListener(new java.awt.event.ActionListener() {
@@ -138,8 +133,9 @@ public class ListarXC extends javax.swing.JInternalFrame {
                                 .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(buscar)))
-                        .addGap(153, 153, 153)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(92, 92, 92)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(61, 61, 61)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(

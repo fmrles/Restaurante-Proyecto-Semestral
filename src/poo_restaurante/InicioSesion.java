@@ -5,7 +5,6 @@
 package poo_restaurante;
 
 import java.awt.Color;
-import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -13,13 +12,16 @@ import javax.swing.JOptionPane;
  * @author cphyros
  */
 public class InicioSesion extends javax.swing.JFrame {
-Menu m;
+
+    Menu menu;
+
     /**
      * Creates new form log
      */
     public InicioSesion() {
         initComponents();
-        m = new Menu();
+        menu = new Menu();
+        setLocationRelativeTo(null);
         setTitle("Inicie Sesión");
         //setIconImage(new ImageIcon(getClass().getResource("imagenés/cliente.png")).getImage());
     }
@@ -89,7 +91,7 @@ Menu m;
 
         enviar.setBackground(new java.awt.Color(250, 206, 127));
         enviar.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        enviar.setForeground(new java.awt.Color(102, 102, 102));
+        enviar.setForeground(new java.awt.Color(51, 51, 51));
         enviar.setText("Enviar");
         enviar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         enviar.addActionListener(new java.awt.event.ActionListener() {
@@ -138,7 +140,7 @@ Menu m;
         );
 
         LOGO.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LOGO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenés/user_1.png"))); // NOI18N
+        LOGO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenés/usuario.png"))); // NOI18N
         LOGO.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         jLabel2.setFont(new java.awt.Font("Cooper Black", 0, 48)); // NOI18N
@@ -210,13 +212,13 @@ Menu m;
         if (p.isEmpty() == false && l.isEmpty() == false) {
             if (p.equals("1234") && l.equals("admin")) {
                 JOptionPane.showMessageDialog(null, "Bienvenido/a " + l);
-                m.setVisible(true);
+                menu.setVisible(true);
                 dispose();
             } else {
                 JOptionPane.showMessageDialog(null, "Error");
             }
         } else {
-            JOptionPane.showMessageDialog(null, "debe llenar los  campos primero","error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "debe llenar los  campos primero", "error", JOptionPane.ERROR_MESSAGE);
         }
 
     }//GEN-LAST:event_enviarActionPerformed
@@ -300,6 +302,5 @@ Menu m;
     private javax.swing.JTextField loginTxt;
     private javax.swing.JPasswordField passTxt;
     // End of variables declaration//GEN-END:variables
-
 
 }

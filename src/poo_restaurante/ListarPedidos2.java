@@ -13,14 +13,14 @@ import javax.swing.table.DefaultTableModel;
 public class ListarPedidos2 extends javax.swing.JInternalFrame {
 
     DefaultTableModel modelo;
-    IngresarD form1;
+    IngresarP formIngresarP;
     
     /**
      * Creates new form ListarPedidos2
      */
-    public ListarPedidos2(IngresarD form) {
+    public ListarPedidos2(IngresarP form) {
         initComponents();
-        form1 = form;
+        formIngresarP = form;
         modelo = new DefaultTableModel();
         modelo.addColumn("Cliente");
         modelo.addColumn("Identificación");
@@ -34,9 +34,9 @@ public class ListarPedidos2 extends javax.swing.JInternalFrame {
         listado.setModel(modelo);
         modelo.getDataVector().clear();
         int i = 0;
-        Pedido e[] = form1.deli;
+        Pedido e[] = formIngresarP.deliArray;
         Object [] fila = new Object[5];
-        while(i < form1.cont) {
+        while(i < formIngresarP.cont) {
             fila[0] = e[i].getClienteNombre().getNombre();
             fila[1] = e[i].getId();
             fila[2] = e[i].getDireccion();
@@ -65,6 +65,7 @@ public class ListarPedidos2 extends javax.swing.JInternalFrame {
 
         setBackground(new java.awt.Color(145, 31, 39));
         setClosable(true);
+        setTitle("Listado de Pedidos en Tabla");
 
         jPanel1.setBackground(new java.awt.Color(145, 31, 39));
         jPanel1.setForeground(new java.awt.Color(145, 31, 39));
@@ -89,7 +90,7 @@ public class ListarPedidos2 extends javax.swing.JInternalFrame {
         NombreLogo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenés/order-food.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenés/gestionarPedidos2.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -101,8 +102,8 @@ public class ListarPedidos2 extends javax.swing.JInternalFrame {
                     .addComponent(jScrollPane1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(NombreLogo)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel2)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(

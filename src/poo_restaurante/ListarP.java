@@ -8,12 +8,12 @@ package poo_restaurante;
  *
  * @author Cphyros
  */
-public class ListarD extends javax.swing.JInternalFrame {
+public class ListarP extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form ListarD
      */
-    public ListarD(String info) {
+    public ListarP(String info) {
         initComponents();
         listado.setText(info);
     }
@@ -33,6 +33,7 @@ public class ListarD extends javax.swing.JInternalFrame {
         listado = new javax.swing.JTextArea();
 
         setClosable(true);
+        setTitle("Listado de Pedidos");
 
         jPanel1.setBackground(new java.awt.Color(145, 31, 39));
 

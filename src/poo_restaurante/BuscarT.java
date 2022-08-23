@@ -8,8 +8,10 @@ import javax.swing.JOptionPane;
  */
 public class BuscarT extends javax.swing.JInternalFrame {
 
+    //ATRIBUTOS
     public IngresarT formIngresarT;
 
+    //CONSTRUCTOR
     public BuscarT(IngresarT f2) {
         initComponents();
         formIngresarT = f2;
@@ -138,7 +140,6 @@ public class BuscarT extends javax.swing.JInternalFrame {
             informacion.setText(i);
         }
     }//GEN-LAST:event_BuscarActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Buscar;

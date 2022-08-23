@@ -9,24 +9,26 @@ import javax.swing.JOptionPane;
  * @author Cphyros
  */
 public class IngresarT extends javax.swing.JInternalFrame {
+
     //ATRIBUTOS
     Trabajador traArray[];
     int cont;
-    
+
     //CONSTRUCTOR
     public IngresarT() {
         initComponents();
         traArray = new Trabajador[70];
         cont = 0;
     }
-    
-     //SOLO VUELVE A RESTAURAR LOS CAMPOS
+
+    //SOLO VUELVE A RESTAURAR LOS CAMPOS
     public void borrarCampos() {
         this.rutTxt.setText("");
         this.nombreTxt.setText("");
         this.fonoTxt.setText("");
     }
 
+    //COMPARA EL RUT INGRESADO CON LOS QUE YA ESTAN GUARDADOS
     public boolean BuscarRut(String rut) {
         for (int i = 0; i < cont; i++) {
             if (traArray[i].getRut().equalsIgnoreCase(rut)) {
@@ -35,6 +37,7 @@ public class IngresarT extends javax.swing.JInternalFrame {
         }
         return false;
     }
+
     //AGREGA CLIENTES SOLO SI EL CONTADOR DE TRABAJADORES
     public void AgregarTrabajador(Trabajador t) {
         if (!BuscarRut(rutTxt.getText())) {
@@ -52,6 +55,7 @@ public class IngresarT extends javax.swing.JInternalFrame {
 
     }
 
+    //SOLO SI EL CONTADOR DE TRABAJADORES ES MAS QUE CERO SE LISTARAN LOS TRABAJADORES HASTA EL MOMENTO AGREGADOS
     public String listarTrabajador() {
         String info = " Trabajadores registrados \n\n";
         if (cont == 0) {
@@ -86,6 +90,7 @@ public class IngresarT extends javax.swing.JInternalFrame {
         return (S > 0) ? String.valueOf(S - 1) : "k";
     }
 
+    //VALIDA QUE EN EL CAMPO SOLO SE ESCRIBAN LETRAS
     public boolean validarNombre(String nombre) {
         for (int x = 0; x < nombre.length(); x++) {
             char n = nombre.charAt(x);
@@ -97,6 +102,7 @@ public class IngresarT extends javax.swing.JInternalFrame {
         return true;
     }
 
+    //VALIDA QUE EN EL CAMPO SOLO SE ESCRIBAN NUMEROS    
     public boolean validarFono(String fono) {
         return fono.matches("[+-]?\\d*(\\.\\d+)?");
     }
@@ -126,7 +132,7 @@ public class IngresarT extends javax.swing.JInternalFrame {
         jLabel2.setFont(new java.awt.Font("Cooper Black", 0, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(250, 206, 127));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Formulario Registro de Trabajadores");
+        jLabel2.setText("Registro de Trabajadores");
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenés/listarPorPuesto.png"))); // NOI18N
 
@@ -216,8 +222,8 @@ public class IngresarT extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -238,7 +244,7 @@ public class IngresarT extends javax.swing.JInternalFrame {
                                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(fonoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(guardar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -314,6 +320,7 @@ public class IngresarT extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_puestoActionPerformed
 
+    //SE VALIDAN Y AGREGAN LOS DATOS DEL TRABAJADOR    
     private void guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarActionPerformed
         // TODO add your handling code here:
         String n = nombreTxt.getText();

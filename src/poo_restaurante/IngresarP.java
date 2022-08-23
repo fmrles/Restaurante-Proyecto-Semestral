@@ -433,7 +433,7 @@ public class IngresarP extends javax.swing.JInternalFrame {
 
         Guardar.setBackground(new java.awt.Color(250, 206, 127));
         Guardar.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        Guardar.setForeground(new java.awt.Color(102, 102, 102));
+        Guardar.setForeground(new java.awt.Color(51, 51, 51));
         Guardar.setText("Guardar");
         Guardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -567,7 +567,7 @@ public class IngresarP extends javax.swing.JInternalFrame {
                 JOptionPane.showMessageDialog(null, "Debe ingresar la cantidad de: " + eb);
             } else {
                 total1h = ceb * 5000;
-                pedidoh1 = " " + eb + " $" + total1h + " ";
+                pedidoh1 = " " + eb + ", precio total $" + total1h + " ";
             }
         }
         if (burger2.isSelected()) {
@@ -575,7 +575,7 @@ public class IngresarP extends javax.swing.JInternalFrame {
                 JOptionPane.showMessageDialog(null, "Debe ingresar la cantidad de: " + bbq);
             } else {
                 total2h = cbbq * 6000;
-                pedidoh2 = " " + bbq + " $" + total2h + " ";
+                pedidoh2 = " " + bbq + ", precio total $" + total2h + " ";
             }
         }
         if (burger3.isSelected()) {
@@ -583,7 +583,7 @@ public class IngresarP extends javax.swing.JInternalFrame {
                 JOptionPane.showMessageDialog(null, "Debe ingresar la cantidad de: " + ro);
             } else {
                 total3h = cro * 6500;
-                pedidoh3 = " " + ro + " $" + total3h + " ";
+                pedidoh3 = " " + ro + ", precio total $" + total3h + " ";
             }
         }
         if (burger4.isSelected()) {
@@ -591,7 +591,7 @@ public class IngresarP extends javax.swing.JInternalFrame {
                 JOptionPane.showMessageDialog(null, "Debe ingresar la cantidad de: " + lg);
             } else {
                 total4h = clg * 7500;
-                pedidoh4 = " " + lg + " $" + total4h + " ";
+                pedidoh4 = " " + lg + ", precio total $" + total4h + " ";
             }
         }
         if (burger5.isSelected()) {
@@ -599,7 +599,7 @@ public class IngresarP extends javax.swing.JInternalFrame {
                 JOptionPane.showMessageDialog(null, "Debe ingresar la cantidad de: " + ei);
             } else {
                 total5h = cei * 8000;
-                pedidoh5 = " " + ei + " $" + total5h + " ";
+                pedidoh5 = " " + ei + ", precio total $" + total5h + " ";
             }
         }
         totalBurger = total1h + total2h + total3h + total4h + total5h;
@@ -611,7 +611,7 @@ public class IngresarP extends javax.swing.JInternalFrame {
                 JOptionPane.showMessageDialog(null, "Debe ingresar la cantidad de: " + bcc);
             } else {
                 total1b = cbcc * 1500;
-                pedidob1 = " " + bcc + " $" + total1b + " ";
+                pedidob1 = " " + bcc + ", precio total $" + total1b + " ";
             }
         }
         if (bebida2.isSelected()) {
@@ -619,7 +619,7 @@ public class IngresarP extends javax.swing.JInternalFrame {
                 JOptionPane.showMessageDialog(null, "Debe ingresar la cantidad de: " + bf);
             } else {
                 total2b = cbf * 1500;
-                pedidob2 = " " + bf + " $" + total2b + " ";
+                pedidob2 = " " + bf + ", precio total $" + total2b + " ";
             }
         }
         if (bebida3.isSelected()) {
@@ -627,7 +627,7 @@ public class IngresarP extends javax.swing.JInternalFrame {
                 JOptionPane.showMessageDialog(null, "Debe ingresar la cantidad de: " + bp);
             } else {
                 total3b = cbp * 1500;
-                pedidob3 = " " + bp + " $" + total3b + " ";
+                pedidob3 = " " + bp + ", precio total $" + total3b + " ";
             }
         }
         if (bebida4.isSelected()) {
@@ -635,7 +635,7 @@ public class IngresarP extends javax.swing.JInternalFrame {
                 JOptionPane.showMessageDialog(null, "Debe ingresar la cantidad de: " + bs);
             } else {
                 total4b = cbs * 1500;
-                pedidob4 = " " + bs + " $" + total4b + " ";
+                pedidob4 = " " + bs + ", precio total $" + total4b + " ";
             }
         }
         if (bebida5.isSelected()) {
@@ -643,7 +643,7 @@ public class IngresarP extends javax.swing.JInternalFrame {
                 JOptionPane.showMessageDialog(null, "Debe ingresar la cantidad de: " + bk);
             } else {
                 total5b = cbk * 1500;
-                pedidob3 = " " + bk + " $" + total5b + " ";
+                pedidob3 = " " + bk + ", precio total $" + total5b + " ";
             }
         }
         if (bebida6.isSelected()) {
@@ -651,7 +651,7 @@ public class IngresarP extends javax.swing.JInternalFrame {
                 JOptionPane.showMessageDialog(null, "Debe ingresar la cantidad de: " + blitro);
             } else {
                 total6b = cblitro * 1700;
-                pedidob6 = " " + blitro + " $" + total6b + " ";
+                pedidob6 = " " + blitro + ", precio total $" + total6b + " ";
             }
         }
         totalBebida = total1b + total2b + total3b + total4b + total5b + total6b;
@@ -663,7 +663,7 @@ public class IngresarP extends javax.swing.JInternalFrame {
                 JOptionPane.showMessageDialog(null, "Debe ingresar la cantidad de: " + pfc);
             } else {
                 total1a = cpfc * 1000;
-                pedidoa1 = " " + pfc + " $" + total1a + " ";
+                pedidoa1 = " " + pfc + ", precio total $" + total1a + " ";
             }
         }
         if (aniadido2.isSelected()) {
@@ -671,7 +671,7 @@ public class IngresarP extends javax.swing.JInternalFrame {
                 JOptionPane.showMessageDialog(null, "Debe ingresar la cantidad de: " + pfm);
             } else {
                 total2a = cpfm * 2000;
-                pedidoa2 = " " + pfm + " $" + total2a + " ";
+                pedidoa2 = " " + pfm + ", precio total $" + total2a + " ";
             }
         }
         if (aniadido3.isSelected()) {
@@ -679,7 +679,7 @@ public class IngresarP extends javax.swing.JInternalFrame {
                 JOptionPane.showMessageDialog(null, "Debe ingresar la cantidad de: " + pfg);
             } else {
                 total3a = cpfg * 3000;
-                pedidoa3 = " " + pfg + " $" + total3a + " ";
+                pedidoa3 = " " + pfg + ", precio total $" + total3a + " ";
             }
         }
         if (aniadido4.isSelected()) {
@@ -687,7 +687,7 @@ public class IngresarP extends javax.swing.JInternalFrame {
                 JOptionPane.showMessageDialog(null, "Debe ingresar la cantidad de: " + pa5);
             } else {
                 total4a = cpa5 * 2500;
-                pedidoa4 = " " + pa5 + " $" + total4a + " ";
+                pedidoa4 = " " + pa5 + ", precio total $" + total4a + " ";
             }
         }
         totalAniadido = total1a + total2a + total3a + total4a;

@@ -8,8 +8,10 @@ import javax.swing.JOptionPane;
  */
 public class BuscarP extends javax.swing.JInternalFrame {
 
+    //ATRIBUTOS
     public IngresarP formIngresarP;
 
+    //CONSTRUCTOR
     public BuscarP(IngresarP f2) {
         initComponents();
         formIngresarP = f2;

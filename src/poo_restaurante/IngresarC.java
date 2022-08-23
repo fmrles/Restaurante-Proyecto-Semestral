@@ -136,7 +136,7 @@ public class IngresarC extends javax.swing.JInternalFrame {
 
         registrar.setBackground(new java.awt.Color(250, 206, 127));
         registrar.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        registrar.setForeground(new java.awt.Color(102, 102, 102));
+        registrar.setForeground(new java.awt.Color(51, 51, 51));
         registrar.setText("Ingresar Cliente");
         registrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         registrar.addActionListener(new java.awt.event.ActionListener() {

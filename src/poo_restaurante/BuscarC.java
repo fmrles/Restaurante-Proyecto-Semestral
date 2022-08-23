@@ -8,8 +8,10 @@ import javax.swing.JOptionPane;
  */
 public class BuscarC extends javax.swing.JInternalFrame {
 
+    //ATRIBUTOS
     public IngresarC formIngresarC;
 
+    //CONSTRUCTOR
     public BuscarC(IngresarC f2) {
         initComponents();
         formIngresarC = f2;
@@ -62,6 +64,7 @@ public class BuscarC extends javax.swing.JInternalFrame {
             }
         });
 
+        informacion.setEditable(false);
         informacion.setBackground(new java.awt.Color(250, 206, 127));
         informacion.setColumns(20);
         informacion.setForeground(new java.awt.Color(51, 51, 51));
@@ -138,7 +141,6 @@ public class BuscarC extends javax.swing.JInternalFrame {
             informacion.setText(i);
         }
     }//GEN-LAST:event_BuscarActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Buscar;
